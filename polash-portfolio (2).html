@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Polash Digital Agency — We Grow Brands With Paid Ads</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#060608;--bg2:#0d0d14;--bg3:#13131e;--bg4:#1a1a28;
+  --accent:#7c6fff;--accent2:#ff5f7e;--accent3:#00e5c0;--gold:#f5c842;
+  --text:#f2f2fa;--muted:#8888aa;--border:rgba(124,111,255,0.18);
+  --card:rgba(255,255,255,0.035);--r:16px;
+  --font-head:'Segoe UI',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-head);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:4px}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4}
+nav{position:fixed;top:0;left:0;width:100%;z-index:999;padding:0 2rem;transition:all .3s}
+nav.scrolled{background:rgba(6,6,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.6rem;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.logo-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 10px var(--accent)}
+.nav-links{display:flex;gap:2.2rem}
+.nav-links a{font-size:.88rem;color:var(--muted);font-weight:500;transition:color .2s;letter-spacing:.01em}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.soc-nav{display:flex;gap:.5rem}
+.soc-nav a{width:32px;height:32px;border-radius:8px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.soc-nav a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-1px)}
+.nav-cta{background:var(--accent);color:#fff;padding:.5rem 1.3rem;border-radius:8px;font-size:.85rem;font-weight:700;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:#6a5ef0;transform:translateY(-1px);box-shadow:0 4px 20px rgba(124,111,255,.35)}
+section{padding:110px 2rem;position:relative}
+.container{max-width:1240px;margin:0 auto}
+.chip{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:rgba(124,111,255,.1);border:1px solid rgba(124,111,255,.2);padding:.35rem 1rem;border-radius:20px;margin-bottom:1.2rem}
+.chip::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%}
+h2.sec-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1.18;letter-spacing:-.03em;margin-bottom:1rem}
+p.sec-sub{font-size:1.05rem;color:var(--muted);max-width:580px;margin-bottom:3.5rem;line-height:1.8}
+.grad{background:linear-gradient(135deg,var(--accent) 0%,var(--accent3) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.grad2{background:linear-gradient(135deg,var(--accent2),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.btn-p{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,var(--accent),#6a5ef0);color:#fff;padding:.9rem 2rem;border-radius:10px;font-weight:700;font-size:.95rem;transition:all .25s;border:none;cursor:pointer;text-decoration:none}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,111,255,.4)}
+.btn-wa{display:inline-flex;align-items:center;gap:.6rem;background:rgba(37,211,102,.12);border:1.5px solid rgba(37,211,102,.35);color:#25d366;padding:.9rem 2rem;border-radius:10px;font-weight:700;font-size:.95rem;transition:all .25s;text-decoration:none}
+.btn-wa:hover{background:rgba(37,211,102,.2);transform:translateY(-2px)}
+.btn-o{display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid var(--border);color:var(--text);padding:.85rem 1.8rem;border-radius:10px;font-weight:600;font-size:.9rem;transition:all .25s;text-decoration:none}
+.btn-o:hover{border-color:var(--accent);color:var(--accent)}
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;background:radial-gradient(ellipse 80% 60% at 50% -5%,rgba(124,111,255,.14),transparent),radial-gradient(ellipse 40% 40% at 80% 60%,rgba(0,229,192,.06),transparent)}
+.hero-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.7rem;background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.2);border-radius:20px;padding:.45rem 1.1rem;font-size:.8rem;font-weight:600;color:var(--gold);margin-bottom:1.8rem}
+.pulse{width:8px;height:8px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{opacity:.7;box-shadow:0 0 0 6px rgba(74,222,128,0)}}
+.hero-h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;line-height:1.1;letter-spacing:-.04em;margin-bottom:1.4rem}
+.hero-sub{font-size:1.12rem;color:var(--muted);line-height:1.85;margin-bottom:2.2rem;max-width:520px}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.hero-trust{display:flex;gap:2.5rem;flex-wrap:wrap}
+.ht-item{display:flex;flex-direction:column}
+.ht-num{font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,var(--text),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ht-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.hero-divider{width:1px;background:var(--border);height:40px;align-self:center}
+.hero-right{display:flex;flex-direction:column;gap:1.2rem}
+.hcard{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.6rem;transition:transform .3s}
+.hcard:nth-child(1){animation:hfloat 5s ease-in-out infinite}
+.hcard:nth-child(2){animation:hfloat 5s ease-in-out infinite 1.7s}
+.hcard:nth-child(3){animation:hfloat 5s ease-in-out infinite 3.4s}
+@keyframes hfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.8rem}
+.hc-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.hc-badge{font-size:.7rem;background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.2);padding:.2rem .6rem;border-radius:10px;font-weight:700}
+.hc-val{font-size:2rem;font-weight:900;color:var(--text);letter-spacing:-.03em}
+.hc-sub{font-size:.8rem;color:var(--accent3);margin-top:.3rem}
+.hc-bar{height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin-top:1rem;overflow:hidden}
+.hc-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent3))}
+#proof{padding:30px 2rem;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proof-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:3rem;flex-wrap:wrap;justify-content:center}
+.proof-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;white-space:nowrap}
+.proof-divider{width:1px;height:20px;background:var(--border)}
+.proof-brands{display:flex;gap:2.5rem;align-items:center;flex-wrap:wrap;justify-content:center}
+.proof-brand{font-size:.88rem;font-weight:700;color:rgba(255,255,255,.25);letter-spacing:.05em;transition:color .2s}
+.proof-brand:hover{color:rgba(255,255,255,.55)}
+#about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-img-wrap{position:relative}
+.about-img{width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(135deg,var(--bg3),var(--bg4))}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.about-img-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent3));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;backdrop-filter:blur(10px)}
+.ab-num{font-size:2rem;font-weight:900;color:var(--accent)}
+.ab-text{font-size:.8rem;color:var(--muted);margin-top:.2rem}
+.about-content .sec-sub{margin-bottom:2rem}
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.pillar{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.3rem;transition:border-color .2s}
+.pillar:hover{border-color:var(--accent)}
+.pillar-icon{font-size:1.4rem;margin-bottom:.5rem}
+.pillar-title{font-size:.88rem;font-weight:700;margin-bottom:.3rem}
+.pillar-desc{font-size:.78rem;color:var(--muted);line-height:1.6}
+#services{background:var(--bg2)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.svc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;position:relative;overflow:hidden;transition:all .3s;cursor:default}
+.svc::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,111,255,.06),transparent);opacity:0;transition:opacity .3s}
+.svc:hover{border-color:rgba(124,111,255,.5);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.svc:hover::after{opacity:1}
+.svc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.2rem}
+.svc-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:rgba(124,111,255,.1);border:1px solid rgba(124,111,255,.2)}
+.svc-num{font-size:.7rem;color:var(--muted);font-weight:700;letter-spacing:.1em}
+.svc-title{font-size:1.15rem;font-weight:800;margin-bottom:.5rem;letter-spacing:-.01em}
+.svc-for{font-size:.75rem;color:var(--accent3);font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.8rem}
+.svc-desc{font-size:.88rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
+.svc-results{background:rgba(0,229,192,.06);border:1px solid rgba(0,229,192,.15);border-radius:8px;padding:.75rem 1rem;font-size:.82rem;color:var(--accent3);line-height:1.6}
+.svc-steps{margin-top:1rem;display:flex;flex-direction:column;gap:.4rem}
+.svc-step{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.svc-step::before{content:'→';color:var(--accent);font-size:.7rem;flex-shrink:0}
+#cases{background:var(--bg)}
+.cases-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.8rem}
+.case{background:var(--bg3);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform .25s}
+.case:hover{transform:translateY(-4px)}
+.case-header{padding:1.8rem 2rem 1.2rem;border-bottom:1px solid var(--border)}
+.case-cat{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700;margin-bottom:.6rem}
+.case-title{font-size:1.1rem;font-weight:800;margin-bottom:.8rem;line-height:1.3}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.cm{background:var(--bg4);border-radius:10px;padding:.8rem;text-align:center}
+.cm-val{font-size:1.35rem;font-weight:900;color:var(--accent3)}
+.cm-label{font-size:.67rem;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:.2rem}
+.case-body{padding:1.5rem 2rem}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ba-item{border-radius:10px;padding:1rem}
+.ba-before{background:rgba(255,95,126,.06);border:1px solid rgba(255,95,126,.15)}
+.ba-after{background:rgba(0,229,192,.06);border:1px solid rgba(0,229,192,.15)}
+.ba-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.ba-before .ba-label{color:var(--accent2)}
+.ba-after .ba-label{color:var(--accent3)}
+.ba-text{font-size:.82rem;color:var(--muted);line-height:1.6}
+#testi{background:var(--bg2)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .3s;position:relative}
+.tcard:hover{border-color:rgba(124,111,255,.4);transform:translateY(-3px)}
+.tcard::before{content:'"';position:absolute;top:1rem;right:1.5rem;font-size:5rem;color:rgba(124,111,255,.08);font-family:Georgia,serif;line-height:1}
+.tstars{color:var(--gold);font-size:.95rem;letter-spacing:.1em;margin-bottom:1rem}
+.ttext{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;font-style:italic}
+.tauthor{display:flex;align-items:center;gap:.9rem}
+.tavatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0}
+.tname{font-weight:700;font-size:.9rem}
+.trole{font-size:.75rem;color:var(--muted)}
+#process{background:var(--bg)}
+.process-track{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;position:relative}
+.process-track::before{content:'';position:absolute;top:32px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,var(--accent),var(--accent3));opacity:.3;z-index:0}
+.pstep{text-align:center;padding:1.5rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:var(--r);position:relative;z-index:1;transition:all .3s}
+.pstep:hover{border-color:var(--accent);transform:translateY(-4px)}
+.pnum{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent3));display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900;color:#fff;margin:0 auto 1rem;box-shadow:0 0 20px rgba(124,111,255,.3)}
+.ptitle{font-size:.95rem;font-weight:800;margin-bottom:.5rem}
+.pdesc{font-size:.78rem;color:var(--muted);line-height:1.65}
+#offer{background:var(--bg2)}
+.offer-wrap{background:linear-gradient(135deg,rgba(124,111,255,.12),rgba(0,229,192,.06));border:1px solid rgba(124,111,255,.25);border-radius:24px;padding:4rem;text-align:center;position:relative;overflow:hidden}
+.offer-wrap::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(124,111,255,.08) 0%,transparent 60%);pointer-events:none}
+.offer-wrap h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:1rem;letter-spacing:-.03em}
+.offer-wrap p{font-size:1.05rem;color:var(--muted);max-width:560px;margin:0 auto 2rem;line-height:1.8}
+.offer-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.urgency{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,95,126,.1);border:1px solid rgba(255,95,126,.2);border-radius:20px;padding:.4rem 1.1rem;font-size:.8rem;color:var(--accent2);font-weight:600}
+.urgency-dot{width:6px;height:6px;background:var(--accent2);border-radius:50%;animation:pulse2 1.5s infinite}
+@keyframes pulse2{0%,100%{opacity:1}50%{opacity:.3}}
+#faq{background:var(--bg)}
+.faq-wrap{max-width:820px;margin:0 auto}
+.fitem{border:1px solid var(--border);border-radius:12px;margin-bottom:.9rem;overflow:hidden;transition:border-color .2s}
+.fitem.open{border-color:rgba(124,111,255,.4)}
+.fq{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.6rem;cursor:pointer;font-weight:600;font-size:.95rem;transition:color .2s;gap:1rem}
+.fq:hover{color:var(--accent)}
+.fitem.open .fq{color:var(--accent)}
+.farrow{width:26px;height:26px;border-radius:50%;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.7rem;flex-shrink:0;transition:all .3s;color:var(--muted)}
+.fitem.open .farrow{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(180deg)}
+.fa{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease;font-size:.9rem;color:var(--muted);line-height:1.8;padding:0 1.6rem}
+.fitem.open .fa{max-height:250px;padding:0 1.6rem 1.3rem}
+#contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.contact-left h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:1rem;letter-spacing:-.03em}
+.contact-left p{color:var(--muted);line-height:1.8;margin-bottom:2rem;font-size:.95rem}
+.channels{display:flex;flex-direction:column;gap:.9rem}
+.channel{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.4rem;transition:all .2s}
+.channel:hover{border-color:var(--accent);transform:translateX(4px)}
+.ch-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ch-email .ch-icon{background:rgba(124,111,255,.15);color:var(--accent)}
+.ch-wa .ch-icon{background:rgba(37,211,102,.12);color:#25d366}
+.ch-tg .ch-icon{background:rgba(0,136,204,.12);color:#0088cc}
+.ch-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-bottom:.2rem}
+.ch-val{font-size:.9rem;font-weight:600}
+.soc-contact{margin-top:2rem}
+.soc-contact-title{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:1rem}
+.soc-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.soc-btn{display:flex;align-items:center;gap:.6rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.65rem 1.1rem;font-size:.85rem;font-weight:600;transition:all .2s}
+.soc-btn:hover{transform:translateY(-2px)}
+.soc-btn.fb:hover{border-color:#1877f2;color:#1877f2}
+.soc-btn.ig:hover{border-color:#e1306c;color:#e1306c}
+.soc-btn.wa:hover{border-color:#25d366;color:#25d366}
+.soc-btn.tg:hover{border-color:#0088cc;color:#0088cc}
+.contact-form{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2.5rem}
+.cf-title{font-size:1.25rem;font-weight:800;margin-bottom:.4rem}
+.cf-sub{font-size:.85rem;color:var(--muted);margin-bottom:1.8rem}
+.fg{margin-bottom:1.1rem}
+.fg label{display:block;font-size:.78rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.5rem}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:.8rem 1rem;color:var(--text);font-size:.92rem;font-family:inherit;transition:border-color .2s;outline:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(124,111,255,.1)}
+.fg textarea{height:100px;resize:none}
+.fg select{cursor:pointer}
+.fg select option{background:var(--bg3)}
+.submit-btn{width:100%;background:linear-gradient(135deg,var(--accent),#6a5ef0);color:#fff;border:none;padding:1rem;border-radius:10px;font-size:.95rem;font-weight:800;cursor:pointer;transition:all .25s;letter-spacing:.02em}
+.submit-btn:hover{opacity:.9;transform:translateY(-1px);box-shadow:0 8px 25px rgba(124,111,255,.35)}
+.cf-note{text-align:center;font-size:.75rem;color:var(--muted);margin-top:.8rem;display:flex;align-items:center;justify-content:center;gap:.4rem}
+footer{background:var(--bg);border-top:1px solid var(--border);padding:4rem 2rem 2rem}
+.footer-inner{max-width:1240px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand .logo{margin-bottom:.9rem}
+.footer-brand p{font-size:.85rem;color:var(--muted);line-height:1.75;max-width:260px}
+.footer-soc{display:flex;gap:.6rem;margin-top:1.3rem}
+.footer-soc a{width:34px;height:34px;border-radius:8px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+.footer-soc a:hover{background:var(--accent);border-color:var(--accent);color:#fff;transform:translateY(-2px)}
+.footer-col h4{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.1rem;color:var(--text)}
+.footer-col a{display:block;font-size:.85rem;color:var(--muted);margin-bottom:.55rem;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--muted);flex-wrap:wrap;gap:.8rem}
+.footer-bottom span.accent{color:var(--accent)}
+@media(max-width:900px){
+  .hero-wrap,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .process-track{grid-template-columns:1fr 1fr}
+  .process-track::before{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .about-badge{right:0;bottom:-10px}
+  .pillars{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .nav-links{display:none}
+  section{padding:80px 1.2rem}
+  .footer-grid{grid-template-columns:1fr}
+  .process-track{grid-template-columns:1fr}
+  .cases-grid,.testi-grid,.services-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo"><div class="logo-dot"></div>Polash Digital</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#cases">Results</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="soc-nav">
+        <a href="https://www.facebook.com/PolashDigitalAgency" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.instagram.com/polashdigitalagency/" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        <a href="https://wa.me/8801745723887" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+        <a href="https://t.me/PolashDigitalAgency" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+      </div>
+      <a href="#contact" class="nav-cta">Get Free Strategy Call</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container hero-wrap">
+    <div>
+      <div class="hero-badge"><div class="pulse"></div> Available for New Clients · Bangladesh 🇧🇩</div>
+      <h1 class="hero-h1">Stop Spending.<br><span class="grad">Start Scaling.</span><br>Real Results, Real ROI.</h1>
+      <p class="hero-sub">I help eCommerce brands and small businesses turn ad budgets into consistent, scalable revenue — using battle-tested Meta, TikTok & Google strategies that actually work.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>Get Free Strategy Call</a>
+        <a href="https://wa.me/8801745723887" target="_blank" class="btn-wa"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+      </div>
+      <div class="hero-trust">
+        <div class="ht-item"><div class="ht-num">120+</div><div class="ht-label">Campaigns Run</div></div>
+        <div class="hero-divider"></div>
+        <div class="ht-item"><div class="ht-num">4.8×</div><div class="ht-label">Avg. ROAS</div></div>
+        <div class="hero-divider"></div>
+        <div class="ht-item"><div class="ht-num">$2M+</div><div class="ht-label">Ad Spend Managed</div></div>
+        <div class="hero-divider"></div>
+        <div class="ht-item"><div class="ht-num">98%</div><div class="ht-label">Client Retention</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hcard">
+        <div class="hc-top"><div class="hc-label">Fashion eCommerce · Meta Ads</div><div class="hc-badge">▲ Live</div></div>
+        <div class="hc-val">$18,400</div>
+        <div class="hc-sub">Revenue this month · 6.2× ROAS</div>
+        <div class="hc-bar"><div class="hc-fill" style="width:82%"></div></div>
+      </div>
+      <div class="hcard">
+        <div class="hc-top"><div class="hc-label">Real Estate · Lead Gen Campaign</div><div class="hc-badge">▲ 340 Leads</div></div>
+        <div class="hc-val">$1.20</div>
+        <div class="hc-sub">Cost per qualified lead · 30 days</div>
+        <div class="hc-bar"><div class="hc-fill" style="width:91%;background:linear-gradient(90deg,var(--accent3),var(--accent))"></div></div>
+      </div>
+      <div class="hcard">
+        <div class="hc-top"><div class="hc-label">Skincare Brand · TikTok Ads</div><div class="hc-badge">▲ Viral</div></div>
+        <div class="hc-val">8.4× ROAS</div>
+        <div class="hc-sub">2.1M impressions · Month 1</div>
+        <div class="hc-bar"><div class="hc-fill" style="width:95%;background:linear-gradient(90deg,var(--accent2),var(--gold))"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="proof-inner">
+    <div class="proof-label">Trusted by businesses across</div>
+    <div class="proof-divider"></div>
+    <div class="proof-brands">
+      <span class="proof-brand">🇺🇸 USA</span>
+      <span class="proof-brand">🇬🇧 UK</span>
+      <span class="proof-brand">🇦🇺 Australia</span>
+      <span class="proof-brand">🇨🇦 Canada</span>
+      <span class="proof-brand">🇩🇪 Germany</span>
+      <span class="proof-brand">🇮🇳 India</span>
+      <span class="proof-brand">🇦🇪 UAE</span>
+      <span class="proof-brand">🇸🇬 Singapore</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img">
+          <img src="https://i.ibb.co/zT5Mqt4Q/Whats-App-Image-2026-03-30-at-09-48-18.jpg" alt="Polash Ahammed" onerror="this.style.display='none';document.getElementById('ab-fallback').style.display='flex'"/>
+          <div class="about-img-fallback" id="ab-fallback" style="display:none">PA</div>
+        </div>
+        <div class="about-badge"><div class="ab-num">5+</div><div class="ab-text">Years in Performance<br>Marketing</div></div>
+      </div>
+      <div class="about-content">
+        <div class="chip">About Me</div>
+        <h2 class="sec-title">The Marketer Who<br><span class="grad">Thinks Like a CEO</span></h2>
+        <p class="sec-sub">I'm Polash Ahammed — a performance marketer from Bangladesh who has helped 80+ brands across 15+ countries generate consistent revenue through paid advertising. I don't just run ads. I build growth systems.</p>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.85;margin-bottom:1.5rem">My journey started with a simple question: <em style="color:var(--text)">"Why do most businesses waste money on ads that don't work?"</em> After years of testing, optimizing, and scaling — I found the answer. And now I use it to grow my clients' businesses every single day.</p>
+        <a href="#contact" class="btn-p" style="width:fit-content">Work With Me →</a>
+        <div class="pillars">
+          <div class="pillar"><div class="pillar-icon">🎯</div><div class="pillar-title">Data-First Approach</div><div class="pillar-desc">Every decision is backed by data. No guesswork, no assumptions.</div></div>
+          <div class="pillar"><div class="pillar-icon">💬</div><div class="pillar-title">Direct Communication</div><div class="pillar-desc">You talk to me directly — not a junior or account manager.</div></div>
+          <div class="pillar"><div class="pillar-icon">📊</div><div class="pillar-title">Full Transparency</div><div class="pillar-desc">Weekly reports. Real numbers. No vanity metrics.</div></div>
+          <div class="pillar"><div class="pillar-icon">🚀</div><div class="pillar-title">ROI Obsessed</div><div class="pillar-desc">I don't celebrate impressions. I celebrate your revenue growth.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="chip">What I Do</div>
+    <h2 class="sec-title">Services Built to <span class="grad">Generate Revenue</span></h2>
+    <p class="sec-sub">Every service is engineered around one outcome: maximum return on your ad spend.</p>
+    <div class="services-grid">
+      <div class="svc"><div class="svc-top"><div class="svc-icon">📘</div><div class="svc-num">01</div></div><div class="svc-title">Meta Ads</div><div class="svc-for">For eCommerce & Lead Gen Businesses</div><div class="svc-desc">Facebook & Instagram advertising that reaches your ideal buyer at the right moment. I build full-funnel campaigns — from cold awareness to hot retargeting — that turn scrollers into paying customers.</div><div class="svc-results">✦ Avg. 4–7× ROAS · Campaigns live in 48hrs · CPL as low as $0.80</div><div class="svc-steps"><div class="svc-step">Audience Research & Segmentation</div><div class="svc-step">Creative Strategy & Ad Copywriting</div><div class="svc-step">A/B Testing & Optimization</div><div class="svc-step">Weekly Performance Reports</div></div></div>
+      <div class="svc"><div class="svc-top"><div class="svc-icon">🎵</div><div class="svc-num">02</div></div><div class="svc-title">TikTok Ads</div><div class="svc-for">For Brands Targeting Gen Z & Millennials</div><div class="svc-desc">TikTok is the fastest-growing ad platform on the planet. I craft scroll-stopping creatives and Spark Ad strategies that generate viral reach and convert viewers into buyers at a fraction of Meta's CPM.</div><div class="svc-results">✦ 8× ROAS achieved · 2M+ impressions · Low CPM untapped markets</div><div class="svc-steps"><div class="svc-step">Trend & Hook Research</div><div class="svc-step">UGC & Native Creative Strategy</div><div class="svc-step">Spark Ads + In-Feed Launch</div><div class="svc-step">Scale Winning Creatives</div></div></div>
+      <div class="svc"><div class="svc-top"><div class="svc-icon">🔍</div><div class="svc-num">03</div></div><div class="svc-title">Google Ads</div><div class="svc-for">For Businesses Targeting High-Intent Buyers</div><div class="svc-desc">Capture people who are actively searching for what you sell. Search, Shopping, and Performance Max campaigns built to dominate your niche and steal market share from competitors.</div><div class="svc-results">✦ 3–6× ROAS · CPC reduced 40% avg · Faster scale than social ads</div><div class="svc-steps"><div class="svc-step">Keyword & Competitor Research</div><div class="svc-step">Campaign Architecture & Bid Strategy</div><div class="svc-step">Conversion Tracking Setup</div><div class="svc-step">Monthly Optimization Cycle</div></div></div>
+      <div class="svc"><div class="svc-top"><div class="svc-icon">🔗</div><div class="svc-num">04</div></div><div class="svc-title">Funnel Strategy</div><div class="svc-for">For Businesses With Low Conversion Rates</div><div class="svc-desc">A great ad only works if the funnel converts. I design end-to-end customer journeys — from ad click to purchase — that maximize every dollar of your ad spend and eliminate leaks in your funnel.</div><div class="svc-results">✦ Conversion rate up 3× avg · Lower CAC · Higher LTV</div><div class="svc-steps"><div class="svc-step">Funnel Audit & Gap Analysis</div><div class="svc-step">Offer & Landing Page Strategy</div><div class="svc-step">Email & Retargeting Sequences</div><div class="svc-step">CRO Testing & Refinement</div></div></div>
+      <div class="svc"><div class="svc-top"><div class="svc-icon">⚙️</div><div class="svc-num">05</div></div><div class="svc-title">Page Optimization</div><div class="svc-for">For Businesses Spending on Ads but Not Converting</div><div class="svc-desc">Your landing page is where money is won or lost. I set up, optimize, and rebuild Facebook Pages, pixel tracking, product pages, and ad destinations to make every click count.</div><div class="svc-results">✦ Full pixel & event setup · Page score optimized · Faster load speed</div><div class="svc-steps"><div class="svc-step">Technical Audit & Pixel Setup</div><div class="svc-step">Copy & CTA Optimization</div><div class="svc-step">Mobile-First Redesign</div><div class="svc-step">Speed & Trust Signal Fixes</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem"><a href="#contact" class="btn-p">Discuss My Project →</a></div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="container">
+    <div class="chip">Proof of Work</div>
+    <h2 class="sec-title">Real Numbers. <span class="grad">Real Growth.</span></h2>
+    <p class="sec-sub">These aren't projections. These are actual results from real businesses I've worked with.</p>
+    <div class="cases-grid">
+      <div class="case"><div class="case-header"><div class="case-cat">Fashion eCommerce · USA · Meta Ads</div><div class="case-title">From Money-Losing Ads to $18K/Month in 45 Days</div><div class="case-metrics"><div class="cm"><div class="cm-val">6.2×</div><div class="cm-label">ROAS</div></div><div class="cm"><div class="cm-val">$18K</div><div class="cm-label">Revenue</div></div><div class="cm"><div class="cm-val">45d</div><div class="cm-label">Timeline</div></div></div></div><div class="case-body"><div class="ba"><div class="ba-item ba-before"><div class="ba-label">Before</div><div class="ba-text">$2K/month ad spend. 1.1× ROAS. No pixel tracking. Boosting random posts with zero strategy.</div></div><div class="ba-item ba-after"><div class="ba-label">After</div><div class="ba-text">Full funnel rebuilt. Lookalike + retargeting stack. Creative testing system. 6.2× ROAS in 45 days.</div></div></div></div></div>
+      <div class="case"><div class="case-header"><div class="case-cat">Real Estate Agency · UK · Lead Gen</div><div class="case-title">340 Qualified Leads at $1.20 Each in 30 Days</div><div class="case-metrics"><div class="cm"><div class="cm-val">340</div><div class="cm-label">Leads</div></div><div class="cm"><div class="cm-val">$1.20</div><div class="cm-label">CPL</div></div><div class="cm"><div class="cm-val">−90%</div><div class="cm-label">Cost Drop</div></div></div></div><div class="case-body"><div class="ba"><div class="ba-item ba-before"><div class="ba-label">Before</div><div class="ba-text">$15 CPL with cold traffic. Low-quality leads. Sales team frustrated and conversion rate under 2%.</div></div><div class="ba-item ba-after"><div class="ba-label">After</div><div class="ba-text">Hyper-local targeting + form optimization = 340 qualified leads at $1.20 CPL. Sales team overwhelmed.</div></div></div></div></div>
+      <div class="case"><div class="case-header"><div class="case-cat">Skincare Brand · Australia · TikTok Ads</div><div class="case-title">2.1M Impressions & 8.4× ROAS — Month One</div><div class="case-metrics"><div class="cm"><div class="cm-val">8.4×</div><div class="cm-label">ROAS</div></div><div class="cm"><div class="cm-val">2.1M</div><div class="cm-label">Impressions</div></div><div class="cm"><div class="cm-val">2×</div><div class="cm-label">Sold Out</div></div></div></div><div class="case-body"><div class="ba"><div class="ba-item ba-before"><div class="ba-label">Before</div><div class="ba-text">Zero TikTok presence. No Gen Z audience. Relying only on Instagram with declining reach and rising costs.</div></div><div class="ba-item ba-after"><div class="ba-label">After</div><div class="ba-text">3 viral creatives + Spark Ads strategy. Store sold out twice. 8.4× ROAS and a brand-new loyal audience.</div></div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="testi">
+  <div class="container">
+    <div class="chip">Client Reviews</div>
+    <h2 class="sec-title">Don't Take My Word. <span class="grad">Take Theirs.</span></h2>
+    <p class="sec-sub">Real clients. Real results. Real words.</p>
+    <div class="testi-grid">
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"Polash completely transformed our ad strategy. We went from bleeding money to generating consistent 6× ROAS. He's not just a vendor — he's a genuine growth partner who cares about your business."</div><div class="tauthor"><div class="tavatar">SR</div><div><div class="tname">Sarah R.</div><div class="trole">Fashion Brand Owner · USA</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"Within 30 days we had more qualified leads than the previous 3 months combined. CPL dropped from $15 to $1.20. The ROI was immediate and the communication was always professional."</div><div class="tauthor"><div class="tavatar">JM</div><div><div class="tname">James M.</div><div class="trole">Real Estate Director · UK</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"Our TikTok campaign went viral in week two. 2 million impressions, sold out twice, 8× ROAS. Polash understands how to make ads that feel native and convert without feeling like ads."</div><div class="tauthor"><div class="tavatar">AC</div><div><div class="tname">Amelia C.</div><div class="trole">Skincare Founder · Australia</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"I'd been burned by 3 agencies before Polash. He delivered results in week one. Transparent, honest, zero fluff — and genuinely invested in growing my restaurant chain's online orders."</div><div class="tauthor"><div class="tavatar">DK</div><div><div class="tname">David K.</div><div class="trole">Restaurant Chain Owner · Canada</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"Google Shopping campaigns Polash built reduced our CPC by 38% while tripling our conversion rate. His data-driven approach is unmatched. Best marketing investment we've made."</div><div class="tauthor"><div class="tavatar">LP</div><div><div class="tname">Laura P.</div><div class="trole">Retail Brand · Germany</div></div></div></div>
+      <div class="tcard"><div class="tstars">★★★★★</div><div class="ttext">"Working with Polash was the smartest decision I made this year. Full page setup, pixel, funnel — and within 2 weeks we had our first consistent daily sales. Highly recommended."</div><div class="tauthor"><div class="tavatar">RM</div><div><div class="tname">Rahul M.</div><div class="trole">D2C Brand Founder · India</div></div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem"><a href="#contact" class="btn-p">Get Results Like These →</a></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="chip">How It Works</div>
+    <h2 class="sec-title">A Proven 5-Step System <span class="grad">That Scales</span></h2>
+    <p class="sec-sub">No guesswork. No shortcuts. Just a repeatable process that consistently delivers growth.</p>
+    <div class="process-track">
+      <div class="pstep"><div class="pnum">01</div><div class="ptitle">Research</div><div class="pdesc">Deep dive into your business, market, competitors, and target audience. We build on data, not assumptions.</div></div>
+      <div class="pstep"><div class="pnum">02</div><div class="ptitle">Strategy</div><div class="pdesc">Custom ad strategy, creative direction, offer positioning, and funnel design tailored to your goals.</div></div>
+      <div class="pstep"><div class="pnum">03</div><div class="ptitle">Launch</div><div class="pdesc">Campaigns go live with structured A/B testing across audiences, creatives, and placements.</div></div>
+      <div class="pstep"><div class="pnum">04</div><div class="ptitle">Optimize</div><div class="pdesc">Cut losers fast. Double winners. Weekly optimization cycles to maximize every dollar spent.</div></div>
+      <div class="pstep"><div class="pnum">05</div><div class="ptitle">Scale</div><div class="pdesc">Once proven, we scale aggressively — more budget, more channels, more revenue. Predictably.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="offer">
+  <div class="container">
+    <div class="offer-wrap">
+      <div class="chip" style="margin-bottom:1.5rem">Limited Offer</div>
+      <h2>Get a Free <span class="grad2">Ad Account Audit</span><br>Worth $297 — Today Only</h2>
+      <p>I'll personally review your current ads, identify exactly where you're losing money, and give you a clear roadmap to fix it. Zero cost. Zero obligation. Just pure value.</p>
+      <div class="offer-btns">
+        <a href="#contact" class="btn-p">Claim My Free Audit →</a>
+        <a href="https://wa.me/8801745723887" target="_blank" class="btn-wa">Book via WhatsApp</a>
+      </div>
+      <div class="urgency"><div class="urgency-dot"></div> Only 3 spots remaining this month — first come, first served</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="chip">FAQ</div>
+    <h2 class="sec-title" style="text-align:center">Your Questions, <span class="grad">Answered Honestly</span></h2>
+    <p class="sec-sub" style="margin:0 auto 3rem;text-align:center">No sales fluff. Just straight answers to what you actually want to know.</p>
+    <div class="faq-wrap">
+      <div class="fitem"><div class="fq">What's the minimum budget I need to get started? <span class="farrow">▼</span></div><div class="fa">For Meta Ads, I recommend a minimum ad spend of $500/month. For Google Ads, $700/month gives us enough data to optimize. TikTok can work from $300/month. My management fee is separate and depends on the scope. Book a call and I'll give you a transparent breakdown for your specific goals.</div></div>
+      <div class="fitem"><div class="fq">How fast will I see results? <span class="farrow">▼</span></div><div class="fa">Most clients see initial traction within 7–14 days. Meaningful ROAS improvement typically happens in weeks 3–6 as we gather data, test, and optimize. I always set realistic expectations upfront — no false promises, no hype. The goal is sustainable growth, not a one-week spike.</div></div>
+      <div class="fitem"><div class="fq">Can you guarantee results? <span class="farrow">▼</span></div><div class="fa">No ethical marketer can guarantee specific numbers — ad platforms are dynamic and results depend on many factors including your product, market, and offer. What I can guarantee is: a proven strategy, rigorous testing, full transparency, and relentless optimization. My track record speaks for itself.</div></div>
+      <div class="fitem"><div class="fq">Do you work with international clients? <span class="farrow">▼</span></div><div class="fa">Absolutely. I work with clients across the USA, UK, Australia, Canada, Germany, India, UAE, and more. All communication is in English. I'm available via WhatsApp, Telegram, and email across time zones. Remote collaboration is seamless and I provide detailed weekly reports so you always know what's happening.</div></div>
+      <div class="fitem"><div class="fq">How is Polash Digital different from other agencies? <span class="farrow">▼</span></div><div class="fa">You work directly with me — not a junior account manager or outsourced team. I'm deeply invested in your results, not just your monthly retainer. I combine performance marketing expertise with conversion copywriting and funnel strategy — most agencies only offer one of these. And I'm radically transparent: you see everything, always.</div></div>
+      <div class="fitem"><div class="fq">What happens after I contact you? <span class="farrow">▼</span></div><div class="fa">I'll respond within 2 hours. We schedule a free 30-minute strategy call where I learn about your business, goals, and current situation. I'll then provide a custom growth roadmap — no strings attached. If we're a good fit, we move forward. If not, you still leave with valuable insights you can act on immediately.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="chip">Let's Talk</div>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:1rem;letter-spacing:-.03em">Ready to <span class="grad">Grow Your<br>Business?</span></h2>
+        <p>Book a free strategy call. I'll audit your marketing, pinpoint your biggest growth opportunities, and show you exactly how to scale — with zero obligation.</p>
+        <div class="channels">
+          <a href="mailto:polashdigitalagency@gmail.com" class="channel ch-email"><div class="ch-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="ch-label">Email</div><div class="ch-val">polashdigitalagency@gmail.com</div></div></a>
+          <a href="https://wa.me/8801745723887" target="_blank" class="channel ch-wa"><div class="ch-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div><div><div class="ch-label">WhatsApp — Fastest Response</div><div class="ch-val">+880 1745-723887</div></div></a>
+          <a href="https://t.me/PolashDigitalAgency" target="_blank" class="channel ch-tg"><div class="ch-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div><div><div class="ch-label">Telegram</div><div class="ch-val">@PolashDigitalAgency</div></div></a>
+        </div>
+        <div class="soc-contact">
+          <div class="soc-contact-title">Connect on Social</div>
+          <div class="soc-row">
+            <a href="https://www.facebook.com/PolashDigitalAgency" target="_blank" class="soc-btn fb"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+            <a href="https://www.instagram.com/polashdigitalagency/" target="_blank" class="soc-btn ig"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram</a>
+            <a href="https://wa.me/8801745723887" target="_blank" class="soc-btn wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+            <a href="https://t.me/PolashDigitalAgency" target="_blank" class="soc-btn tg"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="cf-title">📋 Book Your Free Strategy Call</div>
+        <div class="cf-sub">Fill in your details — I'll respond within 2 hours.</div>
+        <div class="fg"><label>Full Name</label><input type="text" id="cf-name" placeholder="Your full name"/></div>
+        <div class="fg"><label>Email Address</label><input type="email" id="cf-email" placeholder="you@company.com"/></div>
+        <div class="fg"><label>WhatsApp Number</label><input type="tel" id="cf-wa" placeholder="+1 234 567 8900"/></div>
+        <div class="fg"><label>Your Business / Website</label><input type="text" id="cf-biz" placeholder="e.g. Polash Digital Agency"/></div>
+        <div class="fg"><label>Service Interested In</label>
+          <select id="cf-svc">
+            <option value="">Select a service...</option>
+            <option>Meta Ads (Facebook/Instagram)</option>
+            <option>TikTok Ads</option>
+            <option>Google Ads</option>
+            <option>Funnel Strategy</option>
+            <option>Page Optimization</option>
+            <option>Full Package</option>
+          </select>
+        </div>
+        <div class="fg"><label>Tell Me About Your Goal</label><textarea id="cf-msg" placeholder="e.g. I run a fashion brand doing $10K/month and want to scale to $50K using Meta Ads..."></textarea></div>
+        <button class="submit-btn" onclick="submitForm()">🚀 Book My Free Strategy Call</button>
+        <div class="cf-note">🔒 No commitment. No credit card. 100% confidential.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><div class="logo-dot"></div> Polash Digital Agency</div>
+        <p>Performance marketing expert helping international eCommerce brands and small businesses generate consistent revenue through paid advertising. Based in Bangladesh. Working worldwide.</p>
+        <div class="footer-soc">
+          <a href="https://www.facebook.com/PolashDigitalAgency" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="https://www.instagram.com/polashdigitalagency/" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a href="https://wa.me/8801745723887" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="https://t.me/PolashDigitalAgency" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><a href="#services">Meta Ads</a><a href="#services">TikTok Ads</a><a href="#services">Google Ads</a><a href="#services">Funnel Strategy</a><a href="#services">Page Optimization</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="#about">About Polash</a><a href="#cases">Case Studies</a><a href="#testi">Testimonials</a><a href="#process">Our Process</a><a href="#offer">Free Audit</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="mailto:polashdigitalagency@gmail.com">Email Us</a><a href="https://wa.me/8801745723887" target="_blank">WhatsApp</a><a href="https://t.me/PolashDigitalAgency" target="_blank">Telegram</a><a href="#contact">Book Free Call</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Polash Digital Agency · Bangladesh 🇧🇩</span>
+      <span class="accent">Built to Convert. Engineered to Scale.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30)
+});
+document.querySelectorAll('.fq').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.fitem').forEach(f=>f.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
+function submitForm(){
+  const n=document.getElementById('cf-name').value.trim();
+  const e=document.getElementById('cf-email').value.trim();
+  const wa=document.getElementById('cf-wa').value.trim();
+  const biz=document.getElementById('cf-biz').value.trim();
+  const svc=document.getElementById('cf-svc').value;
+  const msg=document.getElementById('cf-msg').value.trim();
+  if(!n||!e){alert('Please enter your name and email.');return;}
+  const text=`Hello Polash! I'd like to book a free strategy call.%0A%0A👤 Name: ${encodeURIComponent(n)}%0A📧 Email: ${encodeURIComponent(e)}%0A📱 WhatsApp: ${encodeURIComponent(wa||'Not provided')}%0A🏢 Business: ${encodeURIComponent(biz||'Not provided')}%0A🎯 Service: ${encodeURIComponent(svc||'Not selected')}%0A💬 Goal: ${encodeURIComponent(msg||'Will discuss on call')}`;
+  window.open(`https://wa.me/8801745723887?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
